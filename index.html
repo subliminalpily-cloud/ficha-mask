@@ -65,6 +65,29 @@
         
         .barra-arquivos { background: #333; padding: 15px; margin-bottom: 20px; border-bottom: 2px solid #0f0; display: flex; gap: 15px; align-items: center; justify-content: space-between; }
         .select-arquivo { background: #000; color: #0f0; border: 1px solid #0f0; padding: 5px; }
+
+        @media (max-width: 768px) {
+            .layout-duas-colunas {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .coluna-esquerda, .coluna-direita {min-width: 100%; flex: none; }
+            .ficha-container {padding: 10px; max-width: 100%; border-width: 1px; 
+            body { padding: 5px; }
+            .tabela-rotulos th, .tabela-rotulos td {
+                padding: 4px;
+                font-size: 0.8em;
+            }
+            .nome-rotulo { width: auto; }
+            .seletor-valor span {
+                width: 25px; height: 25px; line-height: 25px;
+            }
+            .container-foto { width: 100%; margin-bottom: 15px; }
+            .topo-ficha { flex-direction: column; } 
+            .btn-add, .btn-remove {
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,4 +214,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
