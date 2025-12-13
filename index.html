@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha RPG - Masks (GitHub Pages)</title>
     <style>
-        /* --- CSS GERAL --- */
+       
         body { font-family: 'Courier New', Courier, monospace; background-color: #1a1a1a; color: #0f0; padding: 20px; }
         .ficha-container { max-width: 95%; margin: 0 auto; background: #222; padding: 25px; border: 2px solid #0f0; box-shadow: 0 0 10px #0f0; }
         h1, h2 { border-bottom: 1px solid #0f0; padding-bottom: 5px; text-transform: uppercase; }
@@ -15,7 +15,7 @@
         input[type="text"], textarea { width: 100%; padding: 10px; box-sizing: border-box; background: #000; border: 1px solid #0f0; color: #0f0; font-family: inherit; font-size: 1.1em; }
         textarea { height: 100px; resize: vertical; }
 
-        /* Tabela Rótulos */
+        
         .tabela-rotulos { width: 100%; border-collapse: collapse; margin-top: 10px; }
         .tabela-rotulos td, .tabela-rotulos th { padding: 8px; text-align: center; border-bottom: 1px dashed #333; }
         .nome-rotulo { text-align: left; font-weight: bold; width: 150px; }
@@ -23,7 +23,7 @@
         .seletor-valor span { display: inline-block; width: 30px; height: 30px; line-height: 30px; border: 1px solid #444; border-radius: 50%; cursor: pointer; color: #666; }
         .seletor-valor input[type="radio"]:checked + span { background-color: #0f0; color: #000; font-weight: bold; box-shadow: 0 0 8px #0f0; }
 
-        /* Itens e Botões */
+       
         .habilidade-item { background: #111; padding: 15px; margin-bottom: 10px; border: 1px dashed #444; position: relative; }
         .movimento-item { background: #0a1a0a; padding: 15px; margin-bottom: 15px; border: 1px solid #0f0; position: relative; }
         .btn-add { background: #000; color: #0f0; border: 1px solid #0f0; padding: 10px 20px; cursor: pointer; margin-top: 10px; font-weight: bold; }
@@ -31,7 +31,7 @@
         .btn-remove { position: absolute; top: 5px; right: 5px; background: #f00; color: #fff; border: none; cursor: pointer; font-weight: bold; padding: 2px 8px; font-family: inherit; }
         .btn-remove:hover { background: #900; }
 
-        /* Status e Inputs */
+       
         #status-salvamento { position: fixed; top: 10px; right: 10px; padding: 10px; background: #000; border: 1px solid #0f0; display: none; z-index: 1000; }
         select { width: 100%; padding: 10px; background: #000; border: 1px solid #0f0; color: #0f0; font-family: inherit; font-size: 1.1em; cursor: pointer; }
         .checkbox-box { display: inline-block; cursor: pointer; }
@@ -39,7 +39,7 @@
         .checkbox-box span { display: inline-block; width: 25px; height: 25px; border: 2px solid #0f0; background: #111; }
         .checkbox-box input:checked + span { background: #0f0; box-shadow: 0 0 10px #0f0; }
 
-        /* Condições */
+        
         .lista-condicoes { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
         .checkbox-texto { display: flex; align-items: center; cursor: pointer; padding: 8px; background: rgba(50, 0, 0, 0.2); border: 1px solid transparent; transition: all 0.2s; }
         .checkbox-texto:hover { border-color: #f00; background: rgba(255, 0, 0, 0.1); }
@@ -57,12 +57,12 @@
         .texto-upload { position: absolute; color: #0f0; font-size: 0.8em; background: rgba(0,0,0,0.7); padding: 5px; pointer-events: none; }
         .dados-topo { flex-grow: 1; }
 
-        /* Layout Duas Colunas */
+        
         .layout-duas-colunas { display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap; }
         .coluna-esquerda { flex: 1.2; min-width: 450px; } /* Esquerda um pouco mais larga agora */
         .coluna-direita { flex: 1; min-width: 400px; }
 
-        /* Gerenciador de Arquivos */
+        
         .barra-arquivos { background: #333; padding: 15px; margin-bottom: 20px; border-bottom: 2px solid #0f0; display: flex; gap: 15px; align-items: center; justify-content: space-between; }
         .select-arquivo { background: #000; color: #0f0; border: 1px solid #0f0; padding: 5px; }
     </style>
@@ -86,7 +86,7 @@
     </div>
 
     <div class="ficha-container">
-        <h1 style="text-align: center;">ARQUIVO DE HEROI v3.1 (WEB)</h1>
+        <h1 style="text-align: center;">ARQUIVO DE HEROI</h1>
         
         <form id="ficha-form">
             <div class="layout-duas-colunas">
@@ -191,3 +191,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
