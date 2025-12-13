@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha RPG - Masks (GitHub Pages)</title>
     <style>
-        /* --- CSS MANTIDO IGUAL AO ANTERIOR --- */
+        /* --- CSS GERAL --- */
         body { font-family: 'Courier New', Courier, monospace; background-color: #1a1a1a; color: #0f0; padding: 20px; }
         .ficha-container { max-width: 95%; margin: 0 auto; background: #222; padding: 25px; border: 2px solid #0f0; box-shadow: 0 0 10px #0f0; }
         h1, h2 { border-bottom: 1px solid #0f0; padding-bottom: 5px; text-transform: uppercase; }
@@ -59,7 +59,8 @@
 
         /* Layout Duas Colunas */
         .layout-duas-colunas { display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap; }
-        .coluna-esquerda, .coluna-direita { flex: 1; min-width: 400px; }
+        .coluna-esquerda { flex: 1.2; min-width: 450px; } /* Esquerda um pouco mais larga agora */
+        .coluna-direita { flex: 1; min-width: 400px; }
 
         /* Gerenciador de Arquivos */
         .barra-arquivos { background: #333; padding: 15px; margin-bottom: 20px; border-bottom: 2px solid #0f0; display: flex; gap: 15px; align-items: center; justify-content: space-between; }
@@ -85,12 +86,13 @@
     </div>
 
     <div class="ficha-container">
-        <h1 style="text-align: center;">ARQUIVO DE HEROI</h1>
+        <h1 style="text-align: center;">ARQUIVO DE HEROI v3.1 (WEB)</h1>
         
         <form id="ficha-form">
             <div class="layout-duas-colunas">
 
                 <div class="coluna-esquerda">
+                    
                     <div class="topo-ficha">
                         <div class="container-foto">
                             <label class="moldura-foto" for="input-arquivo">
@@ -162,7 +164,7 @@
                         <div class="lista-condicoes" id="lista-condicoes">
                             </div>
                     </div>
-                </div>
+
                     <div class="campo">
                         <h2>HABILIDADES</h2>
                         <div id="lista-habilidades"></div>
@@ -173,15 +175,14 @@
                         <h2>ANOTAÇÕES</h2>
                         <textarea name="anotacoes" style="height: 300px; font-family: 'Courier New', monospace; line-height: 1.5;"></textarea>
                     </div>
-                </div>
 
-                <div class="coluna-direita">
+                </div> <div class="coluna-direita">
                     <div class="campo">
                         <h2>MOVIMENTOS BÁSICOS</h2>
                         <div id="lista-movimentos"></div>
                         <button type="button" class="btn-add" onclick="adicionarItem('movimentos')">+ NOVO MOVIMENTO</button>
                     </div>
-
+                </div>
 
             </div>
         </form>
@@ -189,6 +190,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
