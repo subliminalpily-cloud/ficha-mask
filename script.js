@@ -3,11 +3,11 @@ const DADOS_PADRAO = {
     rotulos: ["Perigoso", "Aberração", "Salvador", "Superior", "Mundano"],
     playbooks: ["A Janus", "O Delinquente", "O Nova", "A Discípula", "O Transformado", "A Forasteira", "O Legado", "A Amaldiçoada", "O Farol", "A Bruta"],
     condicoes: {
-        "irritado": "IRRITADO (-2 p/ Provocar/Avaliar)",
-        "amedrontado": "AMEDRONTADO (-2 p/ Engajar)",
-        "culpado": "CULPADO (-2 p/ Provocar)",
-        "desesperado": "DESESPERADO (-2 p/ Defender)",
-        "inseguro": "INSEGURO (-2 p/ Rejeitar)"
+        "amedrontado": "ASSUSTADE (-2 p/ Engajar)",
+        "irritado": "IRRITADE (-2 p/ Provocar/Avaliar)",
+        "culpado": "CULPADE (-2 p/ Provocar)",
+        "desesperado": "DESESPERANÇOSE (-2 p/ Defender)",
+        "inseguro": "INSEGURE (-2 p/ Rejeitar)"
     },
     movimentos: [
         { titulo: "ENFRENTAR DIRETAMENTE A AMEAÇA (Role + Perigoso)", descricao: "Num sucesso, vocês trocam golpes. Num 10+, escolha dois. Num 7-9, escolha um:\n- resistir ou evitar os golpes\n- tirar algo do oponente\n- criar uma oportunidade para os aliados\n- impressionar, surpreender ou amedrontar a oposição" },
@@ -335,4 +335,5 @@ document.getElementById('input-arquivo').addEventListener('change', function(e) 
         };
         reader.readAsDataURL(file);
     }
+
 });
