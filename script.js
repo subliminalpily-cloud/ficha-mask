@@ -337,3 +337,72 @@ document.getElementById('input-arquivo').addEventListener('change', function(e) 
     }
 
 });
+
+// --- SISTEMA DE EXPORTAR E IMPORTAR (COMPARTILHAMENTO) ---
+
+function baixarFichaAtual() {
+    // 1. Pega os dados atuais da memória
+    const chave = `maskrpg_ficha_${nomeFichaAtual}`;
+    const dadosJson = localStorage.getItem(chave);
+
+    if (!dadosJson) {
+        alert("Erro: Ficha vazia ou não encontrada.");
+        return;
+    }
+
+    // 2. Cria um arquivo "fantasma" no navegador
+    const blob = new Blob([dadosJson], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    // 3. Cria um link invisível e clica nele para forçar o download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${nomeFichaAtual}.json`; // Nome do arquivo: Batman.json
+    document.body.appendChild(a);
+    a.click();
+    
+    // 4. Limpa
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function importarFicha(input) {
+    const arquivo = input.files[0];
+    if (!arquivo) return;
+
+    const leitor = new FileReader();
+    leitor.onload = function(e) {
+        try {
+            // 1. Tenta ler o conteúdo do arquivo
+            const conteudo = e.target.result;
+            const dados = JSON.parse(conteudo);
+
+            // 2. Descobre o nome da ficha pelo nome do arquivo (ex: "Batman.json" vira "Batman")
+            let nomeImportado = arquivo.name.replace('.json', '');
+            nomeImportado = nomeImportado.replace(/[^a-zA-Z0-9_-]/g, ''); // Limpa caracteres estranhos
+
+            // 3. Pergunta se quer sobrescrever se já existir
+            if (localStorage.getItem(`maskrpg_ficha_${nomeImportado}`)) {
+                if (!confirm(`Já existe uma ficha chamada "${nomeImportado}". Deseja substituir?`)) {
+                    input.value = ''; // Limpa o input para poder tentar de novo
+                    return;
+                }
+            }
+
+            // 4. Salva no LocalStorage e carrega
+            localStorage.setItem(`maskrpg_ficha_${nomeImportado}`, JSON.stringify(dados));
+            
+            alert(`Ficha "${nomeImportado}" importada com sucesso!`);
+            carregarListaFichas();
+            carregarFicha(nomeImportado);
+            
+        } catch (erro) {
+            alert("Erro ao ler o arquivo. Tem certeza que é um JSON válido?");
+            console.error(erro);
+        }
+        
+        // Limpa o input para permitir importar o mesmo arquivo novamente se precisar
+        input.value = '';
+    };
+    leitor.readAsText(arquivo);
+}
